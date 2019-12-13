@@ -59,6 +59,7 @@ class App extends Component {
             <SpellsList spell={spell} key={i}/>
           ))}
         </div>
+        <Loader/>
       </div>
     );
   }

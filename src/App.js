@@ -35,8 +35,6 @@ class App extends Component {
   handleSubmit(event){
     
     event.preventDefault();
-  
-    console.log("hola");
     console.log(this.state.value);
     const filt=this.state.value;
     console.log(event.target);

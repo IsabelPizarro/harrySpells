@@ -56,7 +56,7 @@ class App extends Component {
          .toUpperCase()
           .includes(value.toUpperCase())).map((spell,i)=>(
             (spell==="")? <Loader/>:                
-            <SpellsList spell={spell} o={i}/>
+            <SpellsList spell={spell} key={i}/>
           ))}
         </div>
       </div>

@@ -16,6 +16,7 @@ export default function Loader() {
 
   return (
     <div className={classes.root}>
+      <div>Pinta esto</div>
       <LinearProgress />
     </div>
   );

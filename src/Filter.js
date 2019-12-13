@@ -20,7 +20,8 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function Filter(props) {
-    const {handleInput, handleSubmit,value} = props;
+    const {handleInput, handleSubmit, value} = props;
+    console.log(props);
     
 
   const classes = useStyles();
@@ -35,10 +36,11 @@ export default function Filter(props) {
           margin="normal"
           onChange={handleInput}
           value={value}
+          
         />
         <div className={classes.root}>
     
-    <Button variant="outlined" color="secondary" onChange={handleSubmit}>
+    <Button variant="outlined" color="secondary" onClick={handleSubmit}>
       Search
     </Button>
   

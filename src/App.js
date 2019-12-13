@@ -12,6 +12,7 @@ class App extends Component {
     this.state = {
       spells: [],
       value:"",
+      filteredValue:"",
      
     };
     this.handleInput = this.handleInput.bind(this);
@@ -32,8 +33,13 @@ class App extends Component {
     // console.log(lookFor);
   }
   handleSubmit(event){
-    event.preventDefault();
+   event.preventDefault();
+   debugger;
+    console.log("hola");
     console.log(this.state.value);
+    console.log(event.target);
+    this.setState({ filteredValue: this.state.value });
+    console.log(this.state.filteredValue);
   }
   render() {
     const {spells, value}=this.state;
@@ -55,7 +61,7 @@ class App extends Component {
           lookSpell.spell
          .toUpperCase()
           .includes(value.toUpperCase())).map((spell,i)=>(
-            (spell==="")? <Loader/>:                
+            (spell===[])? <Loader/>:                
             <SpellsList spell={spell} key={i}/>
           ))}
         </div>

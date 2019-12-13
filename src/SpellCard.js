@@ -1,21 +1,3 @@
-// import React from "react";
-
-
-// const SpellCard = props => {
-//   const { spell, i } = props;
-
-//   return (
-//     <li className={i}>
-//             <h2>{spell.spell}</h2>
-//             <small>{spell.type}</small>
-//     </li>
-//   );
-// };
-
-// export default SpellCard;
-
-
-
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';

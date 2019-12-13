@@ -4,8 +4,6 @@
 
 
 .App-header {
-
-  height: 100px;
   padding: 20px;
   color:grey;
 }
@@ -13,7 +11,7 @@
 .efect::first-letter {
   text-transform: uppercase;
 }
-.allItems{
+.ulList{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -21,7 +19,11 @@
  margin: 20px;
 }
 .cardsContainer {
-  margin: 20px 30px 20px 30px;
+  margin: 40px 30px 20px 30px;
   display: flex;
   flex-wrap: wrap;
+}
+.containerFilter {
+  margin: auto;
+  
 }

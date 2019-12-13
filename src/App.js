@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { service } from "./service";
 import SpellsList from './SpellsList';
+import Filter from "./Filter";
 import Loader from './Loader';
 
 
@@ -10,33 +11,52 @@ class App extends Component {
     super(props);
     this.state = {
       spells: [],
+      value:"",
      
     };
-    // this.handleInput = this.handleInput.bind(this);
+    this.handleInput = this.handleInput.bind(this);
+    this.handleSubmit=this.handleSubmit.bind(this);
   }
   componentDidMount() {
     this.getData();
   }
   getData() {
     service().then(data => {
-      // console.log(data);
       this.setState({ spells: data });
     });
+
+  }
+  handleInput(event) {
+    const lookFor = event.currentTarget.value;
+    this.setState({ value: lookFor });
+    // console.log(lookFor);
+  }
+  handleSubmit(event){
+    event.preventDefault();
+    console.log(this.state.value);
   }
   render() {
-    const {spells}=this.state;
+    const {spells, value}=this.state;
     
   
     return (
       <div className="App">
         <div className="App-header">
-          <h2>Buscador hechizos de Harry Potter</h2>
+          <h2>Harry Potter Spell Finder</h2>
+          <Filter
+          handleInput={this.handleInput}
+          handleSubmit={this.handleSubmit}
+          value={value}
+          
+        />
         </div>
         <div className="cardsContainer">
-          {spells.map((spell,i)=>(
-            (spell==="")? {Loader}:
-                 
- <SpellsList spell={spell} o={i}/>
+          {spells.filter(lookSpell =>
+          lookSpell.spell
+         .toUpperCase()
+          .includes(value.toUpperCase())).map((spell,i)=>(
+            (spell==="")? <Loader/>:                
+            <SpellsList spell={spell} o={i}/>
           ))}
         </div>
       </div>

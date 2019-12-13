@@ -6,11 +6,11 @@ const SpellsList = props => {
   const {spell, i}=props;
   return (
     
-    <div className="allItems">
+    <ul className="ulList">
       <SpellCard spell={spell} i={i} key={i}/>
    
      
-    </div>
+    </ul>
   );
 };
 

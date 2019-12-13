@@ -40,7 +40,7 @@ export default function Filter(props) {
         />
         <div className={classes.root}>
     
-    <Button variant="outlined" color="secondary" onClick={handleSubmit}>
+    <Button variant="outlined" color="secondary" onClick={handleSubmit} value={value}>
       Search
     </Button>
   

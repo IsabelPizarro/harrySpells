@@ -54,7 +54,7 @@ s
         />
         </div>
         <div className="cardsContainer">
-          {(this.state.spells=="") ? <Loader/>  :
+          {(spells=="") ? <Loader/>  :
           spells.filter(lookSpell =>
           lookSpell.spell
          .toUpperCase()

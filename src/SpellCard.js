@@ -62,10 +62,7 @@ export default function SpellCard(props) {
     
         title={spell.spell}
         subheader={spell.type}
-      />
-   
-
-      
+      /> 
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites" className={classes.heart}>
           <FavoriteIcon />
@@ -89,7 +86,6 @@ export default function SpellCard(props) {
           <Typography paragraph className="efect">
             {spell.effect}
           </Typography>
-        
         </CardContent>
       </Collapse>
     </Card>

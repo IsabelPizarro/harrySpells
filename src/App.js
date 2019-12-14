@@ -20,6 +20,7 @@ class App extends Component {
   }
   componentDidMount() {
     this.getData();
+    
   }
   getData() {
     service().then(data => {
@@ -27,27 +28,20 @@ class App extends Component {
     });
 
   }
+s
   handleInput(event) {
     const lookFor = event.currentTarget.value;
     this.setState({ value: lookFor });
-    // console.log(lookFor);
   }
   handleSubmit(event){
-    
     event.preventDefault();
-    console.log(this.state.value);
     const filt=this.state.value;
-    console.log(event.target);
-    
-    console.log(filt);
     this.setState({ filteredValue: filt });
 
   }
   render() {
     const {spells, value, filteredValue}=this.state;
-    console.log(this.state.filteredValue);
-    
-  
+ 
     return (
       <div className="App">
         <div className="App-header">
@@ -60,15 +54,14 @@ class App extends Component {
         />
         </div>
         <div className="cardsContainer">
-          {spells.filter(lookSpell =>
+          {(this.state.spells=="") ? <Loader/>  :
+          spells.filter(lookSpell =>
           lookSpell.spell
          .toUpperCase()
-          .includes(filteredValue.toUpperCase())).map((spell,i)=>(
-            (spell===[])? <Loader/>:                
+          .includes(filteredValue.toUpperCase())).map((spell,i)=>(                
             <SpellsList spell={spell} key={i}/>
           ))}
         </div>
-        <Loader/>
       </div>
     );
   }
